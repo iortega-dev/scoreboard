@@ -63,7 +63,13 @@ export default class ScoreBoard {
   }
   
   //3. Update score. Receiving the pair score; home team score and away team score updates a game score.
-  updateScore(matchId: number) {}
+  updateScore(matchId: number, score: Score) {
+    const findMatch = this.getMatch(matchId)
+		if (!findMatch) { // Not match found 
+			throw Error('Not match found with given ID')
+		}
+		findMatch.setScore(score)
+  }
   
   //4. Get a summary of games by total score. Those games with the same total score will be returned ordered by the most recently added to our system.
 	getSummary = () => {}
