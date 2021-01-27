@@ -72,6 +72,10 @@ export default class ScoreBoard {
   }
   
   //4. Get a summary of games by total score. Those games with the same total score will be returned ordered by the most recently added to our system.
-	getSummary = () => {}
+	getSummary = () => {
+    return this._matches.sort((a, b) => {
+			return b.totalScore - a.totalScore || a.startTime - b.startTime
+		})
+  }
 
 }
