@@ -36,17 +36,22 @@ export class Match {
 
 export default class ScoreBoard {
   private _matches: Match[] = []
+  private _accumulator: number = 0
 
   get matches(): Match[] {
     return this._matches;
-}
+  }
 
   getMatch = (matchId: number) => {
     return this.matches.find((match) => match.matchId === matchId)
   }
 
   //1. Start a game. When a game starts, it should capture (being initial score 0 – 0):
-  startGame() {}
+  startGame(localTeamName: string, awayTeamName: string): number {
+    const match = new Match(++this._accumulator, localTeamName, awayTeamName, new Date().getTime()) 
+		this._matches.push(match)
+		return this._accumulator
+  }
 
   //2. Finish game. It will remove a match from the scoreboard.
   finishGame(matchId: number) {}
