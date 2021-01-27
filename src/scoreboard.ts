@@ -1,3 +1,39 @@
+export type Score = {
+	localScore: number
+	awayScore: number
+}
+
+export type Team = {
+	name: string
+	score: number
+}
+
+export class Match {
+	matchId: number
+	localTeam: Team
+	awayTeam: Team
+	startTime: number
+	totalScore: number;
+
+	constructor ( matchId: number, localTeamName: string, awayTeamName: string, startTime: number ) {
+		this.matchId = matchId
+		this.localTeam = { name: localTeamName, score: 0 }
+		this.awayTeam ={ name: awayTeamName, score: 0 }
+		this.startTime = startTime
+		this.totalScore = 0;
+	}
+
+	get score(): Score {
+		return {localScore: this.localTeam.score, awayScore: this.awayTeam.score}
+	}
+
+	setScore = (score: Score) => {
+		this.localTeam.score = score.localScore
+		this.awayTeam.score = score.awayScore
+		this.totalScore = score.awayScore + score.localScore
+	}
+}
+
 export default class ScoreBoard {
 
   //1. Start a game. When a game starts, it should capture (being initial score 0 – 0):
