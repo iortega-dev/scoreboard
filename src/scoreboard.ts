@@ -54,7 +54,13 @@ export default class ScoreBoard {
   }
 
   //2. Finish game. It will remove a match from the scoreboard.
-  finishGame(matchId: number) {}
+  finishGame(matchId: number) {
+    const findMatchIndex = this._matches.findIndex((match) => match.matchId === matchId)
+		if (findMatchIndex === -1) { // Not match found 
+			throw Error('Not match found with given ID')
+		}
+		this._matches.splice(findMatchIndex, 1)
+  }
   
   //3. Update score. Receiving the pair score; home team score and away team score updates a game score.
   updateScore(matchId: number) {}
