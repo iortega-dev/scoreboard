@@ -2,11 +2,16 @@
   "name": "scoreboard",
   "version": "1.0.0",
   "description": "Optima Gaming - Scoreboard library",
-  "main": "index.js",
+  "main": "build/scoreboard.js",
+  "types": "build/scoreboard.d.ts",
+  "files": [
+    "build/**/*"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "jest --silent",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "pack": "npm run build && npm pack"
   },
   "keywords": [],
   "author": "Ignacio Ortega Mancera",
