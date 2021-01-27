@@ -35,6 +35,15 @@ export class Match {
 }
 
 export default class ScoreBoard {
+  private _matches: Match[] = []
+
+  get matches(): Match[] {
+    return this._matches;
+}
+
+  getMatch = (matchId: number) => {
+    return this.matches.find((match) => match.matchId === matchId)
+  }
 
   //1. Start a game. When a game starts, it should capture (being initial score 0 – 0):
   startGame() {}
