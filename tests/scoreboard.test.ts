@@ -4,7 +4,7 @@ describe('Scoreboard', () => {
   describe('basic functionality', () => {
     let instance: Scoreboard;
 
-    beforeAll(() => {
+    beforeEach(() => {
       instance = new Scoreboard();
     });
 
