@@ -41,6 +41,14 @@ describe('Scoreboard', () => {
       matchOne = instance.getMatch(1);
       expect(matchOne).toBeUndefined();
     });
+
+    it('should update first match score', () => {
+      instance.startGame('Mexico', 'Canada');
+      let matchOne = instance.getMatch(1);
+      expect(matchOne.score).toStrictEqual({ localScore: 0, awayScore: 0 });
+      instance.updateScore(1, { localScore: 0, awayScore: 5 });
+      expect(matchOne!.totalScore).toBe(5);
+    });
   })
   
   describe('summary', () => {
