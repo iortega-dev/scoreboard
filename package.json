@@ -4,7 +4,9 @@
   "description": "Optima Gaming - Scoreboard library",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "jest --silent",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "Ignacio Ortega Mancera",
