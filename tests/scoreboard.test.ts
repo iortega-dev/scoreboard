@@ -25,6 +25,13 @@ describe('Scoreboard', () => {
       expect(matches).toBeDefined();
       expect(matches.length).toBe(5);
     });
+
+    it('should find a match by Id', () => {
+      instance.startGame('Mexico', 'Canada');
+      const matchOne = instance.getMatch(1);
+      expect(matchOne).toBeDefined();
+      expect(matchOne!.totalScore).toBe(0);
+    });
   })
   
   describe('summary', () => {
