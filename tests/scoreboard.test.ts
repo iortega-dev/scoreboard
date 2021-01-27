@@ -32,6 +32,15 @@ describe('Scoreboard', () => {
       expect(matchOne).toBeDefined();
       expect(matchOne!.totalScore).toBe(0);
     });
+
+    it('should finish a match with given Id', () => {
+      instance.startGame('Mexico', 'Canada');
+      let matchOne = instance.getMatch(1);
+      expect(matchOne).toBeDefined();
+      instance.finishGame(1);
+      matchOne = instance.getMatch(1);
+      expect(matchOne).toBeUndefined();
+    });
   })
   
   describe('summary', () => {
