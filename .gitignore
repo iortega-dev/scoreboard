@@ -1,5 +1,11 @@
+# Coverage reports
+coverage
+
 # Dependency directory
 node_modules
 
 # Editors
 .vscode
+
+# Ignore built ts files
+build/**/*
