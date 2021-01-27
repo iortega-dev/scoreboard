@@ -52,6 +52,32 @@ describe('Scoreboard', () => {
   })
   
   describe('summary', () => {
-    
+    let instance: Scoreboard;
+
+    beforeEach(() => {
+      instance = new Scoreboard();
+    });
+  
+    it('should return matches summary sorted by score & startTime', (done) => {
+      instance.startGame('Mexico', 'Canada');
+      instance.updateScore(1, { localScore: 0, awayScore: 5 });
+  
+      setTimeout(() => {
+        instance.startGame('Spain', 'Brazil');
+        instance.updateScore(2, { localScore: 10, awayScore: 2 });
+      }, 10);
+      
+      setTimeout(() => {
+        instance.startGame('Germany', 'France');
+        instance.updateScore(3, { localScore: 6, awayScore: 6 });
+      }, 20);
+
+      setTimeout(() => {
+        const matchesSummary = instance.getSummary();
+        expect(matchesSummary[0].totalScore).toBe(matchesSummary[1].totalScore)
+        expect(matchesSummary[0].startTime).toBeLessThan(matchesSummary[1].startTime)
+        done();
+      }, 30)
+    });
   })
 })
