@@ -1,0 +1,12 @@
+{
+  "name": "scoreboard",
+  "version": "1.0.0",
+  "description": "Optima Gaming - Scoreboard library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ignacio Ortega Mancera",
+  "license": "ISC"
+}
