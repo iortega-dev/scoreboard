@@ -62,3 +62,40 @@ npm run pack
 This will result in generate a <b>"scoreboard.tar.gz"</b> file at the root of our project.
 
 This file can be added to our project's package.json to be installed and used.
+
+<hr />
+
+## Usage
+
+
+Basic import
+```javascript
+import ScoreBoard from 'scoreboard'
+const scoreboard = new ScoreBoard();
+```
+
+Start new match, it will return the new match Id
+```javascript
+scoreboard.startGame(
+  'homeTeamName'
+  'awayTeamName'
+);
+```
+
+Finish match by Id
+```javascript
+scoreboard.finishGame(matchId);
+```
+
+Update match score by Id
+```javascript
+scoreboard.updateScore(matchId, {
+    localScore,
+    awayScore
+});
+```
+
+Get matches summary
+```javascript
+const summary = scoreboard.getSummary();
+```
