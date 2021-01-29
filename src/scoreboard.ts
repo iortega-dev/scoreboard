@@ -39,7 +39,7 @@ export default class ScoreBoard {
   private _accumulator: number = 0
 
   get matches(): Match[] {
-    return this._matches;
+    return this._matches.slice();
   }
 
   getMatch = (matchId: number) => {
