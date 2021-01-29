@@ -1,6 +1,6 @@
 {
   "name": "scoreboard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Optima Gaming - Scoreboard library",
   "main": "build/scoreboard.js",
   "types": "build/scoreboard.d.ts",
